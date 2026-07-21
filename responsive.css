@@ -1,0 +1,60 @@
+/* Tablet Landscape */
+@media (max-width: 1024px) {
+  .hero-title { font-size: 3rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-image { max-width: 500px; margin: 0 auto; }
+  .menu-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-stats { gap: 2rem; }
+}
+
+/* Tablet Portrait */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-dark);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: translateX(-100%);
+    transition: 0.4s ease;
+    z-index: 999;
+  }
+  .nav-links.active { transform: translateX(0); }
+  .nav-links a { font-size: 1.3rem; }
+  .hamburger { display: flex; }
+  .hero { min-height: 70vh; }
+  .hero-stats { flex-direction: column; gap: 1.5rem; }
+  .menu-section, .about-section, .testimonials-section { padding: 4rem 5%; }
+  .section-title { font-size: 2rem; }
+  .testimonial-card { flex: 0 0 300px; }
+  body { cursor: auto; }
+  .custom-cursor, .cursor-follower { display: none !important; }
+  .cart-sidebar { width: 100%; max-width: 100vw; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .newsletter-form { flex-direction: column; }
+  .hero-actions { flex-direction: column; align-items: center; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero-title { font-size: 2rem; }
+  .hero-subtitle { font-size: 0.95rem; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .menu-section, .about-section, .testimonials-section { padding: 3rem 4%; }
+  .section-title { font-size: 1.6rem; }
+  .stat-number { font-size: 1.5rem; }
+  .testimonial-card { flex: 0 0 280px; padding: 1.5rem; }
+  .navbar { padding: 0.8rem 4%; }
+  .modal { padding: 1.5rem; width: 95%; }
+  .form-row { grid-template-columns: 1fr !important; }
+  .cta-btn, .cta-btn-outline { width: 100%; text-align: center; }
+  .card-img-wrapper { height: 180px; }
+  .about-features { grid-template-columns: 1fr; }
+}

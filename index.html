@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Phoenix Cafe — Premium artisanal coffee and fresh pastries. Experience uniquely crafted brews in a fiery, ambient atmosphere.">
+  <title>Phoenix Cafe | Rise & Roast</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="animations.css">
+  <link rel="stylesheet" href="navigation.css">
+  <link rel="stylesheet" href="hero.css">
+  <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="#hero" class="logo">Phoenix</a>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cart-btn" onclick="toggleCart()">
+        🛒 Cart (<span id="cart-count">0</span>)
+      </button>
+      <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="ember-particles"></div>
+      <div class="hero-grid">
+        <div class="hero-content scroll-reveal">
+          <div class="hero-badge">🔥 Crafted With Passion</div>
+          <h1 class="hero-title">Rising From <span class="highlight typing-text"></span><span class="typing-cursor"></span></h1>
+          <p class="hero-subtitle">Experience uniquely crafted artisanal coffee and fresh pastries in a fiery, ambient atmosphere. Every cup tells a story.</p>
+          <div class="hero-actions">
+            <button class="cta-btn" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">Explore Menu</button>
+            <button class="cta-btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Our Story</button>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Signature Brews</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">10K+</div>
+              <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">4.9</div>
+              <div class="stat-label">Rating</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image-wrapper scroll-reveal">
+          <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?w=800" alt="Artisanal pour over coffee" class="hero-main-img" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <h2 class="section-title scroll-reveal">Our Story</h2>
+      <div class="about-grid">
+        <div class="about-content scroll-reveal">
+          <h3>Born from fire, brewed with soul</h3>
+          <p>Phoenix Cafe was founded with a singular vision — to create a space where every sip feels like a rebirth. Our beans are ethically sourced from the finest farms across Colombia, Ethiopia, and Guatemala, then roasted in small batches to unlock their deepest flavors.</p>
+          <p>We believe great coffee is an art form. Our baristas are trained to craft each drink with precision and passion, ensuring every visit to Phoenix is an unforgettable experience.</p>
+          <div class="about-features">
+            <div class="feature">
+              <span class="feature-icon">🌿</span>
+              <span>Ethically Sourced</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">🔥</span>
+              <span>Small Batch Roasted</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">☕</span>
+              <span>Expert Baristas</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">🌍</span>
+              <span>Eco-Friendly</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image scroll-reveal">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600" alt="Phoenix Cafe interior with warm ambient lighting" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+      <h2 class="section-title scroll-reveal">Our Signature Brews & Bites</h2>
+      <div class="menu-grid">
+
+        <div class="menu-card scroll-reveal">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=500" alt="Phoenix Espresso" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Espresso</span>
+            <h3 class="card-title">Phoenix Espresso</h3>
+            <p class="card-desc">Rich double shot infused with dark chocolate and a hint of cinnamon spice.</p>
+            <div class="card-bottom">
+              <span class="price">$4.50</span>
+              <button class="add-btn" onclick="addToCart('Phoenix Espresso', 4.50)">Add +</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card scroll-reveal">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=500" alt="Ember Matcha Latte" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Latte</span>
+            <h3 class="card-title">Ember Matcha Latte</h3>
+            <p class="card-desc">Premium ceremonial grade matcha layered with oat milk and honey syrup.</p>
+            <div class="card-bottom">
+              <span class="price">$5.50</span>
+              <button class="add-btn" onclick="addToCart('Ember Matcha Latte', 5.50)">Add +</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card scroll-reveal">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500" alt="Golden Croissant" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Pastry</span>
+            <h3 class="card-title">Golden Croissant</h3>
+            <p class="card-desc">Freshly baked butter croissant topped with toasted almond flakes.</p>
+            <div class="card-bottom">
+              <span class="price">$3.75</span>
+              <button class="add-btn" onclick="addToCart('Golden Croissant', 3.75)">Add +</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card scroll-reveal">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500" alt="Smoked Caramel Cold Brew" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Cold Brew</span>
+            <h3 class="card-title">Smoked Caramel Cold Brew</h3>
+            <p class="card-desc">12-hour slow-steeped cold brew topped with salted caramel cold foam.</p>
+            <div class="card-bottom">
+              <span class="price">$5.25</span>
+              <button class="add-btn" onclick="addToCart('Smoked Caramel Cold Brew', 5.25)">Add +</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card scroll-reveal">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500" alt="Fire-Roasted Avocado Toast" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Food</span>
+            <h3 class="card-title">Fire-Roasted Avocado Toast</h3>
+            <p class="card-desc">Artisanal sourdough, smashed avocado, chili flakes, and poached egg.</p>
+            <div class="card-bottom">
+              <span class="price">$7.50</span>
+              <button class="add-btn" onclick="addToCart('Fire-Roasted Avocado Toast', 7.50)">Add +</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card scroll-reveal">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500" alt="Lava Chocolate Brownie" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Dessert</span>
+            <h3 class="card-title">Lava Chocolate Brownie</h3>
+            <p class="card-desc">Warm fudge brownie with a molten center served with vanilla gelato.</p>
+            <div class="card-bottom">
+              <span class="price">$6.00</span>
+              <button class="add-btn" onclick="addToCart('Lava Chocolate Brownie', 6.00)">Add +</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card scroll-reveal">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500" alt="Rising Sun Cinnamon Latte" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Latte</span>
+            <h3 class="card-title">Rising Sun Cinnamon Latte</h3>
+            <p class="card-desc">Espresso, steamed oat milk, cinnamon-infused maple syrup, and dusted star anise.</p>
+            <div class="card-bottom">
+              <span class="price">$5.25</span>
+              <button class="add-btn" onclick="addToCart('Rising Sun Cinnamon Latte', 5.25)">Add +</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card scroll-reveal">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=500" alt="Phoenix Flame Mocha" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Mocha</span>
+            <h3 class="card-title">Phoenix Flame Mocha</h3>
+            <p class="card-desc">Dark chocolate espresso infused with cayenne pepper and toasted marshmallow fluff.</p>
+            <div class="card-bottom">
+              <span class="price">$5.75</span>
+              <button class="add-btn" onclick="addToCart('Phoenix Flame Mocha', 5.75)">Add +</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card scroll-reveal">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500" alt="Obsidian Nitro Cold Brew" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Cold Brew</span>
+            <h3 class="card-title">Obsidian Nitro Cold Brew</h3>
+            <p class="card-desc">Velvety smooth nitrogen-infused cold brew topped with sweet vanilla bean cream.</p>
+            <div class="card-bottom">
+              <span class="price">$5.50</span>
+              <button class="add-btn" onclick="addToCart('Obsidian Nitro Cold Brew', 5.50)">Add +</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card scroll-reveal">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=500" alt="Prosciutto & Fig Tartine" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Food</span>
+            <h3 class="card-title">Prosciutto & Fig Tartine</h3>
+            <p class="card-desc">Toasted rustic bread spread with ricotta, sliced figs, prosciutto, and honey drizzle.</p>
+            <div class="card-bottom">
+              <span class="price">$8.25</span>
+              <button class="add-btn" onclick="addToCart('Prosciutto & Fig Tartine', 8.25)">Add +</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+      <h2 class="section-title scroll-reveal">What Our Guests Say</h2>
+      <div class="testimonials-track">
+        <div class="testimonial-card scroll-reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The Phoenix Espresso is hands down the best coffee I've ever had. The atmosphere is incredible — dark, moody, and the perfect place to unwind."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div>
+              <div class="author-name">Sarah Mitchell</div>
+              <div class="author-role">Coffee Enthusiast</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card scroll-reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I come here every morning for the Smoked Caramel Cold Brew. The staff remembers my name and my order. It feels like home."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">J</div>
+            <div>
+              <div class="author-name">James Cooper</div>
+              <div class="author-role">Regular Customer</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card scroll-reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The Fire-Roasted Avocado Toast is a game changer. Fresh, flavorful, and beautifully presented. This place raises the bar for cafe food."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">E</div>
+            <div>
+              <div class="author-name">Emily Zhang</div>
+              <div class="author-role">Food Blogger</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card scroll-reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Phoenix Cafe is my go-to spot for creative inspiration. The Flame Mocha with cayenne is unlike anything else. Pure magic in a cup."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div>
+              <div class="author-name">Marcus Rivera</div>
+              <div class="author-role">Designer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">Phoenix</div>
+        <p>Premium artisanal coffee crafted with passion. Every cup is a rebirth of flavor.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul class="footer-hours">
+          <li><span class="day">Mon - Fri</span><span class="time">7:00 AM - 9:00 PM</span></li>
+          <li><span class="day">Saturday</span><span class="time">8:00 AM - 10:00 PM</span></li>
+          <li><span class="day">Sunday</span><span class="time">8:00 AM - 8:00 PM</span></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h4>Stay Updated</h4>
+        <p>Subscribe for exclusive offers and new brew announcements.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Your email address" aria-label="Email for newsletter">
+          <button type="button" onclick="showToast('Thanks for subscribing! 🔥')">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Phoenix Cafe. All rights reserved.</p>
+      <p>Crafted with 🔥 and ☕</p>
+    </div>
+  </footer>
+
+  <!-- Cart Overlay & Sidebar -->
+  <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cart-sidebar">
+    <div>
+      <div class="cart-header">
+        <h2>Your Order</h2>
+        <button class="close-btn" onclick="toggleCart()" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <div class="cart-empty">
+          <span style="font-size:2.5rem;display:block;margin-bottom:0.75rem;">🛒</span>
+          <p>Your cart is empty</p>
+          <p style="font-size:0.8rem;margin-top:0.25rem;color:var(--text-muted);">Add some delicious items!</p>
+        </div>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="total-price">
+        <span>Total:</span>
+        <span id="total-amount">$0.00</span>
+      </div>
+      <button class="checkout-btn" onclick="openPayment()">Proceed to Order</button>
+    </div>
+  </div>
+
+  <!-- Payment Modal -->
+  <div class="modal-overlay" id="payment-overlay">
+    <div class="modal" id="payment-modal">
+      <div class="modal-header">
+        <h3>Complete Payment</h3>
+        <button class="modal-close" onclick="closePayment()" aria-label="Close payment">&times;</button>
+      </div>
+      <p>Enter your details to finalize your order.</p>
+      <div class="modal-form">
+        <div class="form-group">
+          <label for="card-name">Cardholder Name</label>
+          <input type="text" id="card-name" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="card-number">Card Number</label>
+          <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="card-expiry">Expiry</label>
+            <input type="text" id="card-expiry" placeholder="MM/YY">
+          </div>
+          <div class="form-group">
+            <label for="card-cvv">CVV</label>
+            <input type="text" id="card-cvv" placeholder="123">
+          </div>
+        </div>
+        <button class="pay-now-btn" onclick="processPayment()">Pay Now 🔥</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Scripts -->
+  <script src="cart.js"></script>
+  <script src="modal.js"></script>
+  <script src="navigation.js"></script>
+  <script src="animations.js"></script>
+  <script src="cursor.js"></script>
+</body>
+</html>
