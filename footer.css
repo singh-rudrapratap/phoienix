@@ -53,13 +53,21 @@
 }
 
 .footer-brand .footer-logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, var(--accent-fire), var(--accent-gold));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 0.75rem;
   display: inline-block;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+}
+
+.footer-logo-img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+  border-radius: 6px;
+}
+
+.footer-logo:hover .footer-logo-img {
+  opacity: 0.8;
 }
 
 .footer-brand p {
