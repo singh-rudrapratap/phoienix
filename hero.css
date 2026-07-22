@@ -12,7 +12,10 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 30% 50%, rgba(240,165,0,0.1) 0%, rgba(232,93,4,0.05) 30%, transparent 70%);
+  background-image: radial-gradient(ellipse at 30% 50%, rgba(10, 10, 11, 0.6) 0%, var(--bg-dark) 100%), url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=1600');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   z-index: 0;
 }
 
